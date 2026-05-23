@@ -1,0 +1,21 @@
+name: Build Windows
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.x'
+      - run: flutter config --enable-windows-desktop
+      - run: flutter pub get
+      - run: flutter build windows --release
+      - uses: actions/upload-artifact@v3
+        with:
+          name: mi-app-windows
+          path: build\windows\x64\runner\Release\*.exe
