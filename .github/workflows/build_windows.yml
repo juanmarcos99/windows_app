@@ -17,6 +17,5 @@ jobs:
       - run: flutter build windows --release
       - uses: actions/upload-artifact@v4
         with:
-          name: mi-app-distribuible
-          # Usamos un asterisco para capturar todo el contenido de la carpeta
-          path: build\windows\x64\runner\Release\*
+          name: mi-app-windows
+          path: build\windows\x64\runner\Release\*.exe
