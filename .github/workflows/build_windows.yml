@@ -17,5 +17,5 @@ jobs:
       - run: flutter build windows --release
       - uses: actions/upload-artifact@v4
         with:
-          name: mi-app-windows
-          path: build\windows\x64\runner\Release\*.exe
+          name: mi-app-distribuible
+          path: build\windows\x64\runner\Release\
